@@ -1,0 +1,17 @@
+{
+    "contents" : "# this would extract a single substring.\n\nextract_a <- function(from,to,string,delim) {\n  if(!missing(delim)) {\n    if(delim == TRUE) {\n          x <- regmatches(string, \n                  regexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"[\\\\s\\\\S]*?\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T)), \n                                  string, perl=TRUE))\n      \n    }else {\n      x <- regmatches(string, \n                  regexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"\\\\K[\\\\s\\\\S]*?(?=\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T), \")\"), \n                                  string, perl=TRUE))\n    }\n    }else {\n    x <- regmatches(string, \n                  regexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"\\\\K[\\\\s\\\\S]*?(?=\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T), \")\"), \n                                  string, perl=TRUE))\n}\nreturn(x)\n}\n\n# this would extract all the matched substrings.\n\nextract_all_a <- function(from,to,string,delim) {\n  if(!missing(delim)) {\n    if(delim == TRUE) {\n          x <- regmatches(string, \n                  gregexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"[\\\\s\\\\S]*?\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T)), \n                                  string, perl=TRUE))\n      \n    }else {\n      x <- regmatches(string, \n                  gregexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"\\\\K[\\\\s\\\\S]*?(?=\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T), \")\"), \n                                  string, perl=TRUE))\n    }\n    }else {\n    x <- regmatches(string, \n                  gregexpr(\n                    paste0(gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",from,perl=T),\"\\\\K[\\\\s\\\\S]*?(?=\",gsub(\"([^\\\\s\\\\w])\", \"\\\\\\\\\\\\1\",to,perl=T), \")\"), \n                                  string, perl=TRUE))\n}\nreturn(x)\n}\n\n",
+    "created" : 1443543630028.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1269610537",
+    "id" : "DA10BDAC",
+    "lastKnownWriteTime" : 1443631035,
+    "path" : "~/r_projects/dangas/R/dangas_a.r",
+    "project_path" : "R/dangas_a.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
