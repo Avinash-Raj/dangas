@@ -3,12 +3,10 @@
 \alias{dangas}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Regular Expression Based String Manipulation Tools
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+This would simplify the task of using regex for string manipulations such as substring extraction,removal.
 }
 \details{
 \tabular{ll}{
@@ -16,16 +14,15 @@ Package: \tab dangas\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2015-09-29\cr
-License: \tab What license is it under?\cr
+License: \tab GPL-2\cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+
 }
 \author{
-Who wrote it
+Avinash
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Avinash <avistylein3105@gmail.com>
+
 }
 \references{
 ~~ Literature or other references for background information ~~
@@ -38,5 +35,8 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 ~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
-~~ simple examples of the most important functions ~~
+extract_a("<?", "?>", "foo <?php info?> bar")
+extract_a("<?", "?>", "foo <?php info?> bar", delim = TRUE)
+extract_all_a("<?", "?>", "foo <?php info?> bar <?r info?>")
+extract_all_a("<?", "?>", "foo <?php info?> bar <?r info?>", delim = TRUE)
 }
